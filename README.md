@@ -12,8 +12,8 @@
 
 ## Дабы запустить сие творение
 
-* Качаем проект
-* Качаем из рекуарментс
+* git clone https://github.com/DalaevBC/stripe_payment_test.git
+* pip install -r requirements.txt
 * python manage.py makemigrations -> python manage.py migrate
 * python manage.py createsuperuser -> Создаем супер юзера
 * python manage.py runserver
