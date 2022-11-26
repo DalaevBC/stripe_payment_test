@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Buy Item</title>
+  </head>
+  <body>
+    <h1>{{ item.name }}</h1>
+    <p>{{ item.description }}</p>
+    <p>{{ item.price }}</p>
+    <button id="buy-button">Buy</button>
+    <script type="text/javascript">
+
+      // Create an instance of the Stripe object with your publishable API key
+
+      var stripe = Stripe("{{ STRIPE_PUBLIC_KEY }}");
+      var buyButton = document.getElementById(buy-button');
+
+      buyButton.addEventListener('click', function() {
+        fetch('/buy/1', {method: 'GET'})
+        .then(response => return response.json())
+        .then(session => stripe.redirectToCheckout({ sessionId: session.id }))
+      });
+    </script>
+  </body>
+</html>
